@@ -42,7 +42,7 @@ window.addEventListener("resize", () => {
   sizes.pixelRatio = Math.min(window.devicePixelRatio, 2);
 
   // Materials
-  if(particles)
+  if (particles)
     particles.material.uniforms.uResolution.value.set(
       sizes.width * sizes.pixelRatio,
       sizes.height * sizes.pixelRatio
@@ -100,6 +100,12 @@ let particles = null;
 
 gltfLoader.load("./models.glb", (gltf) => {
   particles = {};
+
+  //Positions
+  const positions = gltf.scene.children.map(
+    (child) => child.geometry.attributes.position
+  );
+  console.log(positions);
 
   // Geometry
   particles.geometry = new THREE.SphereGeometry(3);
