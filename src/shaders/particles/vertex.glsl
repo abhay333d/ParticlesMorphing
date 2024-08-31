@@ -4,9 +4,12 @@ uniform float uProgress;
 
 attribute vec3 aPositionTarget;
 
+#include ../includes/simplexNoise3d.glsl
+
 void main()
 {
     //Mixed position
+    float noise = simplexNoise3d(position);
     float progress = uProgress;
     vec3 mixedPosition = mix(position, aPositionTarget, progress);
 
