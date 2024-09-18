@@ -98,9 +98,10 @@ renderer.setClearColor(debugObject.clearColor);
 //Load Models
 let particles = null;
 
-gltfLoader.load("./models.glb", (gltf) => {
+gltfLoader.load("./models2.glb", (gltf) => {
   particles = {};
   particles.index = 0;
+  console.log(gltf);
 
   //Positions
   const positions = gltf.scene.children.map(
@@ -209,6 +210,9 @@ gltfLoader.load("./models.glb", (gltf) => {
   particles.morph3 = () => {
     particles.morph(3);
   };
+  particles.morph4 = () => {
+    particles.morph(4);
+  };
 
   //Tweaks
 
@@ -229,6 +233,7 @@ gltfLoader.load("./models.glb", (gltf) => {
   gui.add(particles, "morph1");
   gui.add(particles, "morph2");
   gui.add(particles, "morph3");
+  gui.add(particles, "morph4");
 });
 
 /**
