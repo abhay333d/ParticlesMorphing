@@ -229,11 +229,11 @@ gltfLoader.load("./models2.glb", (gltf) => {
     .step(0.001)
     .name("uProgress")
     .listen();
-  gui.add(particles, "morph0");
-  gui.add(particles, "morph1");
-  gui.add(particles, "morph2");
-  gui.add(particles, "morph3");
-  gui.add(particles, "morph4");
+  gui.add(particles, "morph0").name("Donut");
+  gui.add(particles, "morph1").name("Suzanne");
+  gui.add(particles, "morph2").name("Sphere");
+  gui.add(particles, "morph3").name("Three.js");
+  gui.add(particles, "morph4").name("MyName");
 });
 
 /**
